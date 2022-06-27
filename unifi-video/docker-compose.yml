@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  restart: unless-stopped
+  build: .
+  privileged: true
+  volumes: 
+    - /data:/data
+    - /recordings:/var/lib/unifi-video/videos
+  ports:
+    - 6666:6666
+    - 7442:7442
+    - 7443:7443
+    - 7445:7445
+    - 7446:7446

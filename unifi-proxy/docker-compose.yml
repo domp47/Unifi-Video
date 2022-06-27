@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  unifi-cam-proxy:
+    restart: unless-stopped
+    image: keshavdv/unifi-cam-proxy
+    volumes:
+      - "./client.pem:/client.pem"
+    command: unifi-cam-proxy --host ${NVR_IP} --cert /client.pem --token ${ADOPTION_TOKEN} rtsp -s "${RTSP_URL}"
