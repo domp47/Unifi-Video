@@ -16,8 +16,8 @@ RUN curl -sqo /tmp/unifi-video_3.10.13.deb "https://dl.ubnt.com/firmwares/ufv/v3
     && rm /tmp/unifi-video_3.10.13.deb
 
 
-# Database Files
-VOLUME [ "/data" ]
+# Unifi Data Directory
+VOLUME [ "/var/lib/unifi-video" ]
 # Recordings Directory
 VOLUME [ "/var/lib/unifi-video/videos" ]
 
