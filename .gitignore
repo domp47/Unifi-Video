@@ -1,6 +1,6 @@
 unifi-proxy/client.pem
 unifi-proxy/.env
 
-unifi-video/data/
-unifi-video/db-data/
-unifi-video/recordings/
+**/data/
+**/recordings/
+**/videos/

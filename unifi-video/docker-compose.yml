@@ -1,15 +1,26 @@
-version: "3.9"
+version: '3'
 services:
   unifi-video:
-    # restart: unless-stopped
-    build: "./"
-    privileged: true
-    volumes: 
-      - ./data:/var/lib/unifi-video
-      - ./recordings:/var/lib/unifi-video/videos
+    build: .
     ports:
+      - 1935:1935
       - 6666:6666
+      - 7004:7004
+      - 7080:7080
       - 7442:7442
       - 7443:7443
+      - 7444:7444
       - 7445:7445
       - 7446:7446
+      - 7447:7447
+    volumes:
+      - ./run/data:/var/lib/unifi-video
+      - ./run/videos:/var/lib/unifi-video/videos
+    tmpfs:
+      - /var/cache/unifi-video
+    environment:
+      - TZ=America/Toronto
+      - DEBUG=1
+      - CREATE_TMPFS=no
+    cap_add:
+      - DAC_READ_SEARCH
