@@ -5,5 +5,5 @@ services:
     image: keshavdv/unifi-cam-proxy
     volumes:
       - "./client.pem:/client.pem"
-    command: unifi-cam-proxy --host ${NVR_IP} --cert /client.pem --token ${ADOPTION_TOKEN} rtsp -s "${RTSP_URL}" --ffmpeg-args='-bsf:v "h264_metadata=tick_rate=60000/1001:fixed_frame_rate_flag=1"'
-    # command: unifi-cam-proxy --host ${NVR_IP} -i 192.168.2.51 --cert /client.pem --token ${ADOPTION_TOKEN} amcrest -u admin -p perriccioli2020 --motion-index 0 --snapshot-channel 1 --sub-stream 0 --ffmpeg-args='-c:a copy -c:v copy -bsf:v "h264_metadata=tick_rate=60000/1001"'
+    command: unifi-cam-proxy --host ${NVR_IP} --cert /client.pem --token ${ADOPTION_TOKEN} rtsp -s "${RTSP_URL}" --ffmpeg-args='-c:a copy -c:v copy -bsf:v "h264_metadata=tick_rate=60"'
+    # command: unifi-cam-proxy --host ${NVR_IP} -i 192.168.2.51 --cert /client.pem --token ${ADOPTION_TOKEN} amcrest -u admin -p perriccioli2020 --motion-index -1 --sub-stream 0 --snapshot-channel 1 --ffmpeg-args='-c:a copy -c:v copy -bsf:v "h264_metadata=tick_rate=60"'

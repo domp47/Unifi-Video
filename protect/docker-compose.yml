@@ -1,0 +1,19 @@
+version: '3'
+services:
+  unifi-protect:
+    container_name: unifi-protect
+    image: iamjamestl/unifi-protect
+    ports:
+      - 1935:1935
+      - 6666:6666
+      - 7004:7004
+      - 7080:7080
+      - 7442:7442
+      - 7443:7443
+      - 7444:7444
+      - 7445:7445
+      - 7446:7446
+      - 7447:7447
+    # volumes:
+    #   - ./run/unifi-protect:/srv/unifi-protect
+    #   - ./run/unifi-protect-postgresql:/var/lib/postgresql

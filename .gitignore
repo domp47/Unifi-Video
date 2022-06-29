@@ -4,3 +4,7 @@ unifi-proxy/.env
 **/data/
 **/recordings/
 **/videos/
+
+**/env/
+**/venv
+**/__pycache__/
